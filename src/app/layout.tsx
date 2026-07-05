@@ -49,18 +49,47 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vinteum.org"),
   title: "Vinteum",
   description: "Vinteum - Open Source Bitcoin Development",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
+    url: "https://vinteum.org",
+    siteName: "Vinteum",
     type: "website",
+    locale: "en_US",
     images: [{ url: "/assets/images/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
+    site: "@vinteum_org",
+    creator: "@vinteum_org",
     images: ["/assets/images/og-image.png"],
   },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Vinteum",
+  url: "https://vinteum.org",
+  logo: "https://vinteum.org/assets/logos/vinteum.svg",
+  description: "Vinteum - Open Source Bitcoin Development",
+  sameAs: [
+    "https://twitter.com/vinteum_org",
+    "https://instagram.com/vinteum_org",
+    "https://www.linkedin.com/company/vinteum-org/",
+    "https://discord.gg/vinteum",
+    "https://njump.me/npub13s0kzccx2g7pnwwt5mjuwttl3m74t9qxyr6q7f9978e98tyjrw3qvx5g70",
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Vinteum",
+  url: "https://vinteum.org",
 };
 
 export default async function RootLayout({
@@ -71,10 +100,18 @@ export default async function RootLayout({
   const newsletters = await getNewsletters().catch(() => []);
 
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${rethinkSans.variable} ${poppins.variable} ${spaceMono.variable} ${barlowCondensed.variable} ${inter.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <LanguageProvider>
           <Navbar />
           <main className="overflow-x-hidden">{children}</main>
