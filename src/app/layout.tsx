@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono, Rethink_Sans, Poppins, Space_Mono, Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Navbar } from "./components/layout";
@@ -111,6 +112,12 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          defer
+          src="https://analytics.seven.sx/script.js"
+          data-website-id="466bc9e9-a42f-4148-982e-a86342049f79"
+          strategy="afterInteractive"
         />
         <LanguageProvider>
           <Navbar />
