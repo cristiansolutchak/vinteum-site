@@ -2,7 +2,20 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
 
+// Short links: add new entries here as { source, destination }
+const redirects = [
+    {
+        source: "/ics",
+        destination:
+            "https://calendar.google.com/calendar/u/2?cid=Y184MTlmMmNjMThhY2UzODNjOWQ2OGFlOGJkNTAzZjU0ZDUxYjkzODFhMDBhYTcxMWFkOTBlYWUzZjZmNWQwZmUxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+        permanent: false,
+    },
+];
+
 const nextConfig: NextConfig = {
+    async redirects() {
+        return redirects;
+    },
     images: {
         unoptimized: isDev,
         remotePatterns: [
