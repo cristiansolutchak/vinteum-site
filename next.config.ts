@@ -10,6 +10,11 @@ const redirects = [
             "https://calendar.google.com/calendar/u/2?cid=Y184MTlmMmNjMThhY2UzODNjOWQ2OGFlOGJkNTAzZjU0ZDUxYjkzODFhMDBhYTcxMWFkOTBlYWUzZjZmNWQwZmUxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
         permanent: false,
     },
+    {
+        source: "/rss.xml",
+        destination: "/blog/rss.xml",
+        permanent: true,
+    },
 ];
 
 const nextConfig: NextConfig = {

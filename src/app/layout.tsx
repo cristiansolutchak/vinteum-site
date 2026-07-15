@@ -50,7 +50,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vinteum.org"),
   title: "Vinteum",
   description: "Vinteum - Open Source Bitcoin Development",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": [{ title: "RSS Feed", url: "/blog/rss.xml" }],
+    },
+  },
+
   openGraph: {
     title: "Vinteum",
     description: "Vinteum - Open Source Bitcoin Development",
