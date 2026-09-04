@@ -7,7 +7,7 @@ const redirects = [
     {
         source: "/ics",
         destination:
-            "https://calendar.google.com/calendar/u/2?cid=Y184MTlmMmNjMThhY2UzODNjOWQ2OGFlOGJkNTAzZjU0ZDUxYjkzODFhMDBhYTcxMWFkOTBlYWUzZjZmNWQwZmUxQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+            "https://calendar.google.com/calendar/ical/c_819f2cc18ace383c9d68ae8bd503f54d51b9381a00aa711ad90eae3f6f5d0fe1%40group.calendar.google.com/public/basic.ics",
         permanent: false,
     },
     {
