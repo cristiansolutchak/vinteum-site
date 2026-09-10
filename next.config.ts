@@ -15,6 +15,16 @@ const redirects = [
         destination: "/blog/rss.xml",
         permanent: true,
     },
+    {
+        source: "/4",
+        destination: "/assets/files/Vinteum-Year-Four-Report-2026.pdf",
+        permanent: true,
+    },
+    {
+        source: "/3",
+        destination: "/assets/files/vinteum-3-years-report.pdf",
+        permanent: true,
+    },
 ];
 
 const nextConfig: NextConfig = {
